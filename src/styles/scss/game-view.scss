@@ -1,0 +1,71 @@
+$toolbar-height: 75px;
+// $sidebar-width: calc(100vw - 100vh + #{$toolbar-height});
+$min-sidebar-width: 300px;
+$media-breakpoint: calc(100vmin + #{$min-sidebar-width});
+// $media-breakpoint: calc(1005px + #{$min-sidebar-width});
+
+$sidebar-width: calc(100vmax - 100vmin + #{$toolbar-height});
+
+
+.game-view-wrapper {
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.game-view-wrapper.wrap {
+	flex-wrap: wrap;
+}
+.game-view-wrapper.nowrap {
+	flex-wrap: nowrap;
+}
+
+
+.chessboard-view {
+	// width is hardcoded in TSX file
+	// default width: minWindowDimension - toolbarHeight;
+	// toolbarHeight: 75px;
+}
+
+
+.gameInfoDisplay {
+	border: 1px solid #00f;
+	width: 100%;
+	// width: $sidebar-width;
+	// min-width: 30%;
+	min-height: 100vh;	// might break media query
+	overflow-y: scroll;
+
+	.metadataContainer, .annotationsContainer {
+		padding: 10px;
+	}
+
+	.metadataContainer {
+		border: 1px solid #fff;
+	}
+
+	.annotationsContainer {
+		border: 1px solid #fff;
+	}
+}
+
+
+// @media (max-width: #{$media-breakpoint}) {
+
+// 	@debug $media-breakpoint;
+
+// 	body {
+// 		background-color: #f00;
+// 	}
+
+// 	.game-view-wrapper {
+// 		flex-direction: column;
+// 		// justify-content: center;
+// 	}
+
+// 	.gameInfoDisplay {
+// 		width: 100vw;
+// 	}
+
+// }

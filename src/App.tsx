@@ -1,26 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './styles/css/main.css';
+import './styles/css/board.css';
+import './styles/css/game-view.css';
+
+import { ChessboardView, ChessboardPreview } from './components/chessboard-view';
+import { ChessGamePreview } from './components/chess-game-preview';
+
 
 function App() {
+  const [ appState, setState ] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className="game-view-wrapper nowrap">
+      <ChessboardView
+        FEN="2R5/4bppk/1p1p3Q/5R1P/4P3/5P2/r4q1P/7K b - - 6 50"
+      />
+
+      <div className="gameInfoDisplay">
+
+        <div className="metadataContainer">
+          metadata tag: value
+          {/* contains plaintext parsed metadata */}
+        </div>
+
+        <div className="movesDisplay">
+          {/* contains <MoveNumber />[] */}
+        </div>
+
+        <div className="annotationsContainer">
+          annotation
+          {/* contains <Annotation />[] */}
+        </div>
+
+      </div>
     </div>
+
   );
 }
+
 
 export default App;

@@ -1,0 +1,30 @@
+.game-view-wrapper {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game-view-wrapper.wrap {
+  flex-wrap: wrap;
+}
+
+.game-view-wrapper.nowrap {
+  flex-wrap: nowrap;
+}
+
+.gameInfoDisplay {
+  border: 1px solid #00f;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+.gameInfoDisplay .metadataContainer, .gameInfoDisplay .annotationsContainer {
+  padding: 10px;
+}
+.gameInfoDisplay .metadataContainer {
+  border: 1px solid #fff;
+}
+.gameInfoDisplay .annotationsContainer {
+  border: 1px solid #fff;
+}
