@@ -34,7 +34,7 @@ $sidebar-width: calc(100vmax - 100vmin + #{$toolbar-height});
 	width: 100%;
 	// width: $sidebar-width;
 	// min-width: 30%;
-	min-height: 100vh;	// might break media query
+	// min-height: 100vh;	// might break media query
 	overflow-y: scroll;
 
 	.metadataContainer, .annotationsContainer {

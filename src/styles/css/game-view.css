@@ -16,7 +16,6 @@
 .gameInfoDisplay {
   border: 1px solid #00f;
   width: 100%;
-  min-height: 100vh;
   overflow-y: scroll;
 }
 .gameInfoDisplay .metadataContainer, .gameInfoDisplay .annotationsContainer {

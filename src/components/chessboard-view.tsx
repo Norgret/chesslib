@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import Chessboard from 'chessboardjsx';
 
-class Window {
-	static getWidth() {
-		return window.innerWidth;
-	}
-	static getHeight() {
-		return window.innerHeight;
-	}
-}
-
 
 type ChessboardProps = {
 	FEN?: string;
@@ -30,10 +21,10 @@ export function ChessboardView({ FEN }: ChessboardProps) {
 	// desktop view: chessboard fills vertical space
 	// mobile view: chessboard fills horizontal space
 	function calculateChessboardWidth() {
-		if (window.innerHeight < window.innerWidth) {
+		if (window.innerHeight <= window.innerWidth) {
 			return window.innerHeight - toolbarHeight;
 		}
-		else if (window.innerHeight >= window.innerWidth) {
+		else if (window.innerHeight > window.innerWidth) {
 			return window.innerWidth;
 		}
 	}
