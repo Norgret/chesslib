@@ -48,8 +48,10 @@ body {
 // Default button styles
 
 .btn {
+  cursor: pointer;
   border: none;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0);
 }
 .btn:active {
   border: none;

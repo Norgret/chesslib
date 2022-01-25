@@ -78,7 +78,7 @@ $sidebar-indent: 10px;
 	.content {
 		margin-left: $sidebar-indent;
 		margin-right: $sidebar-indent;
-		margin-bottom: $sidebar-indent;
+		margin-bottom: $sidebar-gutter-margin;
 	}
 	.content.hidden {
 		display: none;
@@ -86,7 +86,41 @@ $sidebar-indent: 10px;
 
 }
 
-.move-label-container {
+$element-spacing: 5px;
+
+.moves-display {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: left;
+
+	.move-label-container {
+		display: flex;
+		justify-content: space-between;
+		padding: $element-spacing;
+
+		.label {
+			padding: 3px;
+		}
+		.label.move-number {
+			cursor: default;
+			color: $lilac;
+		}
+		.label.move-label:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+.metadata-display {
+	.metadata-tag {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: left;
+		align-items: center;
+		margin: $element-spacing $sidebar-indent;
+		div {
+			margin: 3px $element-spacing;
+		}
+	}
 }

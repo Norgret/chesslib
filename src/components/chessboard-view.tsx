@@ -7,12 +7,6 @@ type ChessboardProps = {
 	FEN?: string;
 }
 
-function BaseChessboard({ FEN }: ChessboardProps) {
-	// array destructuring syntax
-	// useState hook returns [ currentState, (newState) => {setState(newState)} ]
-	const [ state, setState ] = useState({FEN: FEN});
-}
-
 
 export function ChessboardView({ FEN }: ChessboardProps) {
 	// array destructuring syntax
@@ -43,6 +37,9 @@ export function ChessboardView({ FEN }: ChessboardProps) {
       />
 
       <div className="toolbar" style={{height: toolbarHeight}}>
+	      <button className="btn home">
+      		<i className="fa-solid fa-home"></i>
+      	</button>
       	<button className="btn back">
       		<i className="fa-solid fa-backward-fast"></i>
       	</button>

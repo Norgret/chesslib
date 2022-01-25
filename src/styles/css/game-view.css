@@ -55,13 +55,40 @@
 .collapsible-display .content {
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .collapsible-display .content.hidden {
   display: none;
 }
 
-.move-label-container {
+.moves-display {
   display: flex;
+  flex-wrap: wrap;
   justify-content: left;
+}
+.moves-display .move-label-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.moves-display .move-label-container .label {
+  padding: 3px;
+}
+.moves-display .move-label-container .label.move-number {
+  cursor: default;
+  color: #CCD3F0;
+}
+.moves-display .move-label-container .label.move-label:hover {
+  text-decoration: underline;
+}
+
+.metadata-display .metadata-tag {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  margin: 5px 10px;
+}
+.metadata-display .metadata-tag div {
+  margin: 3px 5px;
 }

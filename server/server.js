@@ -1,3 +1,9 @@
+/*
+
+Code for chesslib API
+
+*/
+
 const express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
@@ -36,7 +42,7 @@ app.post('/signup', (req, res) => {
 	const { password, confirmPassword, ...user } = signUpForm;
 	const hash = btoa(`${user.username}${user.password}`);
 
-	// save user data to users.json
+	// save user data to users.json here
 
 	res.send({
 		data: signUpForm,
