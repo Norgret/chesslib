@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 type MoveLabelProps = {
 	moveNumber: number;
 	white: string;
-	black?: string;	// if {black} is undefined, return "#. {white} ..."
+	black?: string;
 }
 
 export function MoveLabel(props: MoveLabelProps) {
@@ -11,15 +11,15 @@ export function MoveLabel(props: MoveLabelProps) {
 
 	return (
 		<div className="move-label-container">
-			<div className="text move-number">
+			<div className="text label move-number">
 				{props.moveNumber}.
 			</div>
-			<div className="text move-label white-move">
+			<button className="btn text bold label move-label white-move">
 				{props.white}
-			</div>
-			<div className="text move-label white-move">
-				{props.black ? props.black : '...'}
-			</div>
+			</button>
+			<button className="btn text bold label move-label white-move">
+				{props.black ? props.black : ''}
+			</button>
 		</div>
 	);
 }
