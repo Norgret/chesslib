@@ -1,16 +1,17 @@
-$toolbar-height: 75px;
-// $sidebar-width: calc(100vw - 100vh + #{$toolbar-height});
-$min-sidebar-width: 300px;
-$media-breakpoint: calc(100vmin + #{$min-sidebar-width});
-// $media-breakpoint: calc(1005px + #{$min-sidebar-width});
+@import '_global';
 
+$toolbar-height: 75px;
+$min-sidebar-width: 200px;
+
+$media-breakpoint: calc(100vmin + #{$min-sidebar-width});
 $sidebar-width: calc(100vmax - 100vmin + #{$toolbar-height});
 
+$sidebar-gutter-margin: 5px;
+$sidebar-indent: 10px;
 
 .game-view-wrapper {
 	width: 100vw;
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
 }
 
@@ -21,51 +22,71 @@ $sidebar-width: calc(100vmax - 100vmin + #{$toolbar-height});
 	flex-wrap: nowrap;
 }
 
+//
+// chessboard styles
+//
 
 .chessboard-view {
 	// width is hardcoded in TSX file
 	// default width: minWindowDimension - toolbarHeight;
 	// toolbarHeight: 75px;
+	box-shadow: $default-shadow;
+	.toolbar {
+		display: flex;
+		justify-content: space-around;
+		.btn {
+			border: 1px solid #f00;
+		}
+	}
 }
 
+
+//
+// game info / sidebar styles
+//
 
 .gameInfoDisplay {
-	border: 1px solid #00f;
 	width: 100%;
-	// width: $sidebar-width;
-	// min-width: 30%;
-	// min-height: 100vh;	// might break media query
 	overflow-y: scroll;
-
-	.metadataContainer, .annotationsContainer {
-		padding: 10px;
-	}
-
-	.metadataContainer {
-		border: 1px solid #fff;
-	}
-
-	.annotationsContainer {
-		border: 1px solid #fff;
-	}
 }
 
 
-// @media (max-width: #{$media-breakpoint}) {
+.collapsible-display {
 
-// 	@debug $media-breakpoint;
+	.tab {
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		margin-bottom: $sidebar-gutter-margin;
+		background-color: $darkgray;
+		box-shadow: $default-shadow;
 
-// 	body {
-// 		background-color: #f00;
-// 	}
+		.label {
+			height: 25px;
+		}
 
-// 	.game-view-wrapper {
-// 		flex-direction: column;
-// 		// justify-content: center;
-// 	}
+		.btn.chevron {
+			background-color: rgba(0, 0, 0, 0);
+			margin-left: $sidebar-gutter-margin;
+			margin-right: $sidebar-gutter-margin;
+			text-align: center;
+			width: 30px;
+			height: 30px;
+		}
+	}
 
-// 	.gameInfoDisplay {
-// 		width: 100vw;
-// 	}
+	.content {
+		margin-left: $sidebar-indent;
+		margin-right: $sidebar-indent;
+		margin-bottom: $sidebar-indent;
+	}
+	.content.hidden {
+		display: none;
+	}
 
-// }
+}
+
+.move-label-container {
+	display: flex;
+	justify-content: left;
+}

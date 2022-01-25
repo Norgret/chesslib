@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
-import './styles/css/main.css';
-import './styles/css/board.css';
-import './styles/css/game-view.css';
 
 import { ChessboardView, ChessboardPreview } from './components/chessboard-view';
 import { ChessGamePreview } from './components/chess-game-preview';
 
+import { CollapsibleDisplay } from './components/game-view/collapsible-display';
+import { MoveLabel } from './components/game-view/move-label';
+import { Annotation } from './components/game-view/annotation';
 
 function App() {
 
@@ -32,19 +32,22 @@ function App() {
 
       <div className="gameInfoDisplay">
 
-        <div className="metadataContainer">
-          metadata tag: value
+        <CollapsibleDisplay label="Metadata">
+          <div className="text">text</div>
+
           {/* contains plaintext parsed metadata */}
-        </div>
+        </CollapsibleDisplay>
 
-        <div className="movesDisplay">
-          {/* contains <MoveNumber />[] */}
-        </div>
+        <CollapsibleDisplay label="Moves">
+        {/* contains <MoveLabel />[] */}
+          <MoveLabel moveNumber={1} white="e4" black="e5" />
+          <MoveLabel moveNumber={2} white="Nf3" black="Nc6" />
+          <MoveLabel moveNumber={3} white="Bc4" />
+        </CollapsibleDisplay>
 
-        <div className="annotationsContainer">
-          annotation
-          {/* contains <Annotation />[] */}
-        </div>
+        <CollapsibleDisplay label="Notes">
+        {/* contains <Annotation />[] */}
+        </CollapsibleDisplay>
 
       </div>
     </div>

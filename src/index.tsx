@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/css/main.css';
+import './styles/css/board.css';
+import './styles/css/game-view.css';
+// import 'font-awesome/css/font-awesome.min.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

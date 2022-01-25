@@ -1,6 +1,8 @@
+@import '_global';
+
 body {
   margin: 0;
-  background-color: #000;
+  background-color: $bg-color;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -20,3 +22,39 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+
+// Text styles
+
+.text {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+.text.title {
+  font-size: 1.8em;
+  font-weight: 900;
+}
+.text.subtitle {
+  font-size: 1.4em;
+  font-weight: 900;
+}
+.text.bold {
+  font-weight: 900;
+}
+
+
+// Default button styles
+
+.btn {
+  border: none;
+  color: #fff;
+}
+.btn:active {
+  border: none;
+}
+.btn:hover {
+  cursor: pointer;
+}
+

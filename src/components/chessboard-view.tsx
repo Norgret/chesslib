@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Chessboard from 'chessboardjsx';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faBackwardStep, faBackwardFast, faForwardStep, faForwardFast } from '@fortawesome/free-solid-svg-icons';
 
 type ChessboardProps = {
 	FEN?: string;
@@ -14,6 +15,9 @@ function BaseChessboard({ FEN }: ChessboardProps) {
 
 
 export function ChessboardView({ FEN }: ChessboardProps) {
+	// array destructuring syntax
+	// useState hook returns [ currentState, (newState) => {setState(newState)} ]
+	const [ state, setState ] = useState({FEN: FEN});
 
 	const toolbarHeight = 75;
 
@@ -29,10 +33,6 @@ export function ChessboardView({ FEN }: ChessboardProps) {
 		}
 	}
 
-	// array destructuring syntax
-	// useState hook returns [ currentState, (newState) => {setState(newState)} ]
-	const [ state, setState ] = useState({FEN: FEN});
-
 	return (
 		<div className="chessboard-view">
 
@@ -43,7 +43,12 @@ export function ChessboardView({ FEN }: ChessboardProps) {
       />
 
       <div className="toolbar" style={{height: toolbarHeight}}>
-      	buttons here
+      	<button className="btn back">
+      		<i className="fa-solid fa-backward-fast"></i>
+      	</button>
+      	<button className="btn back-step"></button>
+      	<button className="btn forward-step"></button>
+      	<button className="btn forward"></button>
       </div>
 
     </div>

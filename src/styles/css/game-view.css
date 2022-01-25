@@ -1,7 +1,11 @@
+@keyframes magnet {
+  to {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  }
+}
 .game-view-wrapper {
   width: 100vw;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -13,17 +17,51 @@
   flex-wrap: nowrap;
 }
 
+.chessboard-view {
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+}
+.chessboard-view .toolbar {
+  display: flex;
+  justify-content: space-around;
+}
+.chessboard-view .toolbar .btn {
+  border: 1px solid #f00;
+}
+
 .gameInfoDisplay {
-  border: 1px solid #00f;
   width: 100%;
   overflow-y: scroll;
 }
-.gameInfoDisplay .metadataContainer, .gameInfoDisplay .annotationsContainer {
-  padding: 10px;
+
+.collapsible-display .tab {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: #1E1E1E;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
 }
-.gameInfoDisplay .metadataContainer {
-  border: 1px solid #fff;
+.collapsible-display .tab .label {
+  height: 25px;
 }
-.gameInfoDisplay .annotationsContainer {
-  border: 1px solid #fff;
+.collapsible-display .tab .btn.chevron {
+  background-color: rgba(0, 0, 0, 0);
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+.collapsible-display .content {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.collapsible-display .content.hidden {
+  display: none;
+}
+
+.move-label-container {
+  display: flex;
+  justify-content: left;
 }
