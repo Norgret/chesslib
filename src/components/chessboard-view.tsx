@@ -43,8 +43,11 @@ export function ChessboardView(props: ChessViewProps) {
 
       <div className="toolbar" style={{height: toolbarHeight}}>
 	      <button className="btn menu" onClick={
-      		() => {props.menuClickHandler()}
-      	}><i className="fa fa-bars"></i>
+      		() => {
+      			// props.menuClickHandler()
+      			window.location.href = "http://localhost:8080/"
+      		}
+      	}><i className="fa fa-home"></i>
       	</button>
       	<div className="btn divider"></div>
       	<button className="btn back" onClick={

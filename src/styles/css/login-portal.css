@@ -32,7 +32,7 @@
   width: 75vw;
   max-width: 600px;
   height: 75vh;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 #login-portal .portal-container div, #signup-portal .portal-container div {
   display: flex;
