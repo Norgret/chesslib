@@ -4,7 +4,6 @@ type MetadataTagProps = {
 }
 
 export function MetadataTag(props: MetadataTagProps) {
-	console.log(props);
 	return (
 		<div className="metadata-tag">
 			<div className="text bold key">{props.attribute}:</div>

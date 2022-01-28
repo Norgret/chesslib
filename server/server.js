@@ -5,49 +5,69 @@ Code for chesslib API
 */
 
 const express = require('express');
-const fs = require('fs');
+const cors = require('cors');
 const bodyParser = require('body-parser');
+const fs = require('fs');
+
+const crypto = require('./crypto.js');
+const database = require('./database.js');
+const login = require('./login.js');
 
 const app = express();
 const PORT = 3000;
+const frontendPath = "http://localhost:8080";
 
-
-//
-//	user management / database
-//
-
-const users = {};
-
-function getUsersSync() {
-	const usersJSON = fs.readFileSync('./users.json');
-	return JSON.parse(usersJSON);
-}
-
-async function
-
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //
 //	routes
 //
 
-// landing page
-app.get('/', (req, res) => {
-	res.send('test');
+// login form
+app.post('/login', (req, res) => {
+	console.log(req.body);
+
+	login.validateCredentials(req.body.username, req.body.password,
+
+		(user) => {	// success
+			res.set({ 'Set-Cookie': `sessID=<sessionID>; Secure` });
+			// save sessID in users.json later
+			res.status(200);
+			res.json(user);
+		},
+
+		() => {	// failure
+			res.status(401);
+			res.send("invalid credentials");
+		}
+
+	);
 });
+
 
 // signup form
 app.post('/signup', (req, res) => {
-	const signUpForm = req.body;
+	const username = req.body.username;
+	const password = req.body.username;
 
-	const { password, confirmPassword, ...user } = signUpForm;
-	const hash = btoa(`${user.username}${user.password}`);
-
-	// save user data to users.json here
-
-	res.send({
-		data: signUpForm,
-		status: 'success'
+	database.pushNewUser({
+		username: username,
+		password: crypto.sha256hash(password)
 	})
+	.then(status => {
+		console.log(status);
+		if (status === "ok") {
+			res.set({ 'Set-Cookie': `sessID=<sessionID>; Secure` });
+			// save sessID in users.json later
+			res.sendStatus(200);
+		}
+		else {	// user exists
+			res.status(401);
+			res.send("user already exists");
+		}
+	});
+
 });
 
 

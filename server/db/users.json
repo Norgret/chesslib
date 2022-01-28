@@ -1,8 +1,1 @@
-{
-	"username":"john",
-	"password":"p@ssword",
-	"sha256password":null,
-	"annotations":[],
-	"liked-annotations":[],
-	"likes-received":[]
-}
+[{"username":"john","password":"0fd205965ce169b5c023282bb5fa2e239b6716726db5defaa8ceff225be805dc","sha256password":null,"annotations":[{}],"liked-annotations":[],"likes-received":[]},{"username":"tard","password":"0fd205965ce169b5c023282bb5fa2e239b6716726db5defaa8ceff225be805dc"},{"username":"test","password":"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"},{"username":"bill","password":"623210167553939c87ed8c5f2bfe0b3e0684e12c3a3dd2513613c4e67263b5a1"},{"username":"billl","password":"fd78fd25e75e7f7fc095255782d1ca85293295e119ce372d04f962afa03c7610"},{"username":"billll","password":"6848dd743f3f563a059874424ebbd32a0c7ba7d80bec26f90b1d4ef72ccb0d9b"}]

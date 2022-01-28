@@ -1,0 +1,90 @@
+@keyframes magnet {
+  to {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+#login-portal, #signup-portal {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../public/img/mikhail-tal2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: max(100vw, 100vh);
+}
+#login-portal .transparent-overlay, #signup-portal .transparent-overlay {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#login-portal .portal-container, #signup-portal .portal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  width: 75vw;
+  max-width: 600px;
+  height: 75vh;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#login-portal .portal-container div, #signup-portal .portal-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  height: 100%;
+}
+#login-portal .portal-container .input-field, #signup-portal .portal-container .input-field {
+  margin-top: 12vh;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 4px;
+  border: none;
+  border-bottom: 5px solid #1E1E1E;
+}
+#login-portal .portal-container .input-field:focus, #signup-portal .portal-container .input-field:focus {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 5px solid #ffffff;
+}
+#login-portal .portal-container .input-field[type=text], #login-portal .portal-container .input-field[type=password], #signup-portal .portal-container .input-field[type=text], #signup-portal .portal-container .input-field[type=password] {
+  width: 100%;
+}
+#login-portal .portal-container ::placeholder, #signup-portal .portal-container ::placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+#login-portal .portal-container #submit, #signup-portal .portal-container #submit {
+  background-color: #000;
+  border: none;
+}
+#login-portal .portal-container #submit:active, #signup-portal .portal-container #submit:active {
+  background-color: #ffffffa0;
+}
+#login-portal .portal-container #submit:focus, #signup-portal .portal-container #submit:focus {
+  border: none;
+}
+#login-portal #error-message-display, #signup-portal #error-message-display {
+  color: #f00;
+  margin-top: 10px;
+}
+#login-portal a.link, #signup-portal a.link {
+  color: #000;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+#signup-portal .portal-container .input-field {
+  margin-top: 8vh;
+}

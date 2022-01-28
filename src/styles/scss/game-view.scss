@@ -1,7 +1,7 @@
 @import '_global';
 
-$toolbar-height: 75px;
-$min-sidebar-width: 200px;
+$toolbar-height: 70px;
+$min-sidebar-width: 175px;
 
 $media-breakpoint: calc(100vmin + #{$min-sidebar-width});
 $sidebar-width: calc(100vmax - 100vmin + #{$toolbar-height});
@@ -27,17 +27,23 @@ $sidebar-indent: 10px;
 //
 
 .chessboard-view {
+	box-shadow: $default-shadow;
+
 	// width is hardcoded in TSX file
 	// default width: minWindowDimension - toolbarHeight;
-	// toolbarHeight: 75px;
-	box-shadow: $default-shadow;
+	// toolbarHeight: 70px;
 	.toolbar {
 		display: flex;
 		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		background-color: $black;
 		.btn {
-			border: 1px solid #f00;
+			// border: 1px solid #f00;
+			font-size: 28px;
 		}
 	}
+
 }
 
 

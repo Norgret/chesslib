@@ -1,0 +1,101 @@
+@import '_global';
+
+#login-portal, #signup-portal {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../../../public/img/mikhail-tal2.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: max(100vw, 100vh);
+
+	.transparent-overlay {
+		z-index: 0;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.portal-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 1;
+		width: 75vw;
+		max-width: 600px;
+		height: 75vh;
+		background-color: rgba(255, 255, 255, 0.2);
+
+		div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			width: 60%;
+			height: 100%;
+		}
+
+		.input-field {
+			margin-top: 12vh;
+			padding: 20px 40px;
+			background-color: rgba(0, 0, 0, 0);
+			color: #fff;
+			font-size: 25px;
+			letter-spacing: 4px;
+			border: none;
+			border-bottom: 5px solid $darkgray;
+		}
+		.input-field:focus {
+			border: none;
+			outline: none;
+			background-color: rgba(0, 0, 0, 0.2);
+			border-bottom: 5px solid $white;
+		}
+
+		.input-field[type=text], .input-field[type=password] {
+			width: 100%;
+		}
+		::placeholder {
+			color: #fff;
+			opacity: 0.3;
+		}
+
+		#submit {
+			background-color: #000;
+			border: none;
+		}
+		#submit:active {
+			background-color: #{$white}a0;
+		}
+		#submit:focus {
+			border: none;
+		}
+	}
+
+	#error-message-display {
+		color: #f00;
+		margin-top: 10px;
+	}
+
+	a.link {
+		color: #000;
+		margin-top: 10px;
+		text-decoration: underline;
+	}
+
+}
+
+#signup-portal {
+	// background-image: ;
+	.portal-container {
+		.input-field {
+			margin-top: 8vh;
+		}
+	}
+}

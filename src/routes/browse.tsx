@@ -5,6 +5,6 @@ import { ChessGamePreview } from '../components/chess-game-preview';
 
 export default function Browse() {
 	return (
-		<div>browse</div>
+		<div>Browse games here</div>
 	);
 }
