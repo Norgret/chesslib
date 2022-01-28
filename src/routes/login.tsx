@@ -16,7 +16,6 @@ export default function Login() {
 
 	function handleChange(event: any) {
 		setState({...state, [event.target.name]: event.target.value});
-		console.log(state);
 	}
 
 	function renderError(message: string) {

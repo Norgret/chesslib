@@ -1,0 +1,33 @@
+@keyframes magnet {
+  to {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+#landing-page {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../public/img/fide-championship.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#landing-page .transparent-overlay {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#landing-page .content {
+  z-index: 1;
+}
+#landing-page .content .title.text {
+  letter-spacing: 8px;
+  font-size: 50px;
+}

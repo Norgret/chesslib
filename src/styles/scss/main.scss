@@ -60,3 +60,44 @@ body {
   cursor: pointer;
 }
 
+// Global styles
+.nav {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  width: 100vw;
+  height: 8vh;
+  background-color: #000;
+
+  .icon {
+    font-size: 30px;
+  }
+  .icon.fa-compass {
+    font-size: 50px;
+  }
+
+  .nav-link {
+    margin: 20px;
+    .link {
+      color: #fff;
+    }
+    .link:hover {
+      color: $yellow;
+    }
+  }
+
+  .left, .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .left {
+    margin-left: 25px;
+  }
+  .right {
+    margin-right: 25px;
+  }
+}

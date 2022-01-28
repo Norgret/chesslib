@@ -1,0 +1,32 @@
+@import '_global';
+
+#landing-page {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../../../public/img/fide-championship.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	.transparent-overlay {
+		z-index: 0;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.content {
+		z-index: 1;
+		.title.text {
+			letter-spacing: 8px;
+			font-size: 50px;
+		}
+	}
+}

@@ -19,7 +19,7 @@ import Profile from './routes/profile';
 render(
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Browse />} />
+      <Route path='/' element={<App />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/game' element={<Game />} />
